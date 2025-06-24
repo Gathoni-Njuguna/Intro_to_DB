@@ -18,8 +18,8 @@ try:
         
         print("Database 'alx_book_store' created successfully!")
         
-except Error as e:
-    print(f"Error while connecting to MySQL: {e}")
+except mysql.connector.Error as err:
+    print(f"MySQL Error: {err}")
     
 finally:
     if 'mycursor' in locals() and mycursor is not None:
